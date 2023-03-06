@@ -4,6 +4,7 @@ from operator import xor
 
 def bits(num, pad_to=0):
     res = [num >> i & 1 for i in range(num.bit_length()-1, -1, -1)]
+    pad_to = pad_to if pad_to else len(res)
     return [0] * (pad_to - len(res)) + res
 
 
