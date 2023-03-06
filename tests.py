@@ -28,3 +28,11 @@ def test_hamming3():
 
     assert encoded == 0b1000011
     assert hc.decode(encoded) == data
+
+
+def test_flip_bit1():
+    assert flip_bit(0b11011, pos=4) == 0b11010
+
+
+def test_flip_bit2():
+    assert flip_bit(0b1001, pos=0, pad_to=5) == 0b11001
