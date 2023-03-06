@@ -28,7 +28,7 @@ def main():
         flipped_bit_pos = random.randint(0, hc.block_size-1)
         encoded = flip_bit(encoded, flipped_bit_pos, pad_to=hc.block_size)
 
-        print(f"Flipped bit at position {flipped_bit_pos} in encoded data, which is now {bitstr(bits(encoded, pad_to=hc.block_size))}")
+        print(f"Flipped bit at big endian 0-based position {flipped_bit_pos} in encoded data, which is now {bitstr(bits(encoded, pad_to=hc.block_size))}")
 
 
     decoded = hc.decode(encoded)
