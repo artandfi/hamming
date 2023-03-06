@@ -28,7 +28,7 @@ class HammingCodec:
         block = [next(data_bits) if i & (i + 1) else 0 for i in range(self.block_size)]
 
         set_bits_positions = [i + 1 for i, bit in enumerate(block) if bit]
-        parity_bits = reversed(bits(reduce(xor, set_bits_positions), pad_to=self.n_parity_bits))
+        parity_bits = reversed(bits(reduce(xor, set_bits_positions, 0), pad_to=self.n_parity_bits))
 
         for i in range(self.n_parity_bits):
             block[2**i-1] = next(parity_bits)
